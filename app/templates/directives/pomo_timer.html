@@ -1,0 +1,7 @@
+<div class="timer">
+  <div class="timer-text"> {{ currentTime | timecode }}</div>
+  <div>
+    <button ng-click="toggleTimer()" ng-show="!breatAttr"> {{ text }} </button>
+    <button ng-click="toggleTimer()" ng-show="breatAttr"> {{ text }} </button>
+  </div>
+</div>
