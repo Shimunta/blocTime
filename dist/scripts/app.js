@@ -1,5 +1,5 @@
 (function() {
-  function config($stateProvider, $locationProvider) {
+  function config($stateProvider, $locationProvider, MY_TIME) {
       $locationProvider
           .html5Mode({
               enabled: true,
@@ -14,7 +14,16 @@
   }
 
 
+
+    var MY_TIME = {
+      workTime: 1500,
+      breakTime: 300
+    };
+
+
+
 angular
   .module('blocTime', ['ui.router','firebase'])
-  .config(config);
+  .config(config)
+  .constant('MY_TIME', MY_TIME)
 })();
