@@ -16,8 +16,9 @@
 
 
     var MY_TIME = {
-      workTime: 1500,
-      breakTime: 300
+      workTime: 2,
+      breakTime: 2,
+      longBreak: 5
     };
 
 

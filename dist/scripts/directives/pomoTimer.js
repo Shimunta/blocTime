@@ -10,6 +10,7 @@
               scope.onBreak= false;
               scope.currentTime = MY_TIME.workTime;
               scope.breakText =  "Start Break"
+              var breakCount = 0;
               var begin;
 
               var startTimer = function () {
@@ -18,13 +19,21 @@
                   if(scope.currentTime < 0) {
                     $interval.cancel(begin);
                         if (scope.onBreak === false) {
-                          scope.onBreak = true;
-                          scope.currentTime = MY_TIME.breakTime;
-                          scope.breakText = "Start Break";
+                            if (breakCount === 4) {
+                              scope.onBreak = true;
+                              scope.currentTime = MY_TIME.longBreak;
+                              scope.breakText = "Start Break";
+                              breakCount = 0;
+                            } else {
+                              scope.onBreak = true;
+                              scope.currentTime = MY_TIME.breakTime;
+                              scope.breakText = "Start Break";
+                            }
                         } else {
                           scope.onBreak = false;
                           scope.currentTime = MY_TIME.workTime;
                           scope.text = "Start Timer";
+                          breakCount++;
                         }
 
                   }
