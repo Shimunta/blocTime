@@ -9,10 +9,15 @@
               scope.text = "Start Timer";
               scope.onBreak= false;
               scope.currentTime = MY_TIME.workTime;
-              scope.breakText =  "Start Break"
+              scope.breakText =  "Start Break";
+              var mySound = new buzz.sound("assets/sound/ding.mp3", {
+                preload: true
+              });
               var breakCount = 0;
               var begin;
-
+              scope.$watch('onBreak', function() {
+                mySound.play();
+              });
               var startTimer = function () {
                 begin = $interval(function(){
                   scope.currentTime--;
@@ -35,7 +40,6 @@
                           scope.text = "Start Timer";
                           breakCount++;
                         }
-
                   }
                 }, 1000);
               };
