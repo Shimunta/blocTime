@@ -1,6 +1,24 @@
-<main>
-  <div>
-    <h1>Timer Information</h1>
-  </div>
-  <pomo-timer> </pomo-timer>
-</main>
+<div class="wrap">
+    <aside class="sidebar">
+      <div class="form-area">
+
+          <h1>Task History</h1>
+          <ul>
+            <li ng-repeat="task in allTasks">{{task.content}}</li> <!-- task content -->
+          </ul>
+            <form name="task-history-form" ng-submit="addTask()">
+              <input type="text" name="task" ng-model="newTask" />
+              <input type="submit" value="Add Task"/>
+            </form>
+      </div>
+    </aside>
+
+    <div class="main">
+
+      <div class="time-section">
+          <h1>Timer Information</h1>
+          <pomo-timer> </pomo-timer>
+      </div>
+
+    </div>
+</div>

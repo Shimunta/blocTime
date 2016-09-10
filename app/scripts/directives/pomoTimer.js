@@ -7,7 +7,7 @@
           scope: { },
           link: function(scope, element, attributes) {
               scope.text = "Start Timer";
-              scope.onBreak= false;
+              scope.onBreak = false;
               scope.currentTime = MY_TIME.workTime;
               scope.breakText =  "Start Break";
               var mySound = new buzz.sound("assets/sound/ding.mp3", {
