@@ -4,7 +4,7 @@
 
           <h1>Task History</h1>
           <ul>
-            <li ng-repeat="task in allTasks">{{task.content}}</li> <!-- task content -->
+            <li ng-repeat="task in allTasks | orderBy: 'timestamp'">{{task.content}}</li> <!-- task content -->
           </ul>
             <form name="task-history-form" ng-submit="addTask()">
               <input type="text" name="task" ng-model="newTask" />

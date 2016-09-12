@@ -5,7 +5,7 @@
     $scope.addTask = function() {
       Tasks.all.$add({
         content: $scope.newTask,
-        created_at: true
+        timestamp: firebase.database.ServerValue.TIMESTAMP
       });
       $scope.newTask = "";
     }
